@@ -190,43 +190,93 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton07ActionPerformed
-        display.setText("7");
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("7");
+        } else {
+            display.setText(auxiliar + "7");
+        }
     }//GEN-LAST:event_boton07ActionPerformed
 
     private void boton08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton08ActionPerformed
-        
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("8");
+        } else {
+            display.setText(auxiliar + "8");
+        }
     }//GEN-LAST:event_boton08ActionPerformed
 
     private void boton09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton09ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("9");
+        } else {
+            display.setText(auxiliar + "9");
+        }
     }//GEN-LAST:event_boton09ActionPerformed
 
     private void boton05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton05ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("5");
+        } else {
+            display.setText(auxiliar + "5");
+        }
     }//GEN-LAST:event_boton05ActionPerformed
 
     private void boton04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton04ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("4");
+        } else {
+            display.setText(auxiliar + "4");
+        }
     }//GEN-LAST:event_boton04ActionPerformed
 
     private void boton06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton06ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("6");
+        } else {
+            display.setText(auxiliar + "6");
+        }
     }//GEN-LAST:event_boton06ActionPerformed
 
     private void boton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton02ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("2");
+        } else {
+            display.setText(auxiliar + "2");
+        }
     }//GEN-LAST:event_boton02ActionPerformed
 
     private void boton01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton01ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("1");
+        } else {
+            display.setText(auxiliar + "1");
+        }
     }//GEN-LAST:event_boton01ActionPerformed
 
     private void boton03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton03ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("3");
+        } else {
+            display.setText(auxiliar + "3");
+        }
     }//GEN-LAST:event_boton03ActionPerformed
 
     private void boton00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton00ActionPerformed
-        // TODO add your handling code here:
+        String auxiliar = display.getText();
+        if (auxiliar.equals("0")) {
+            display.setText("0");
+        } else {
+            display.setText(auxiliar + "0");
+        }
     }//GEN-LAST:event_boton00ActionPerformed
 
     /**
