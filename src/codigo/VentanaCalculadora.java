@@ -42,6 +42,10 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         botonDivision = new javax.swing.JButton();
         botonResta = new javax.swing.JButton();
         botonMultiplicacion = new javax.swing.JButton();
+        botonElevadoCuad = new javax.swing.JButton();
+        botonRaizCuad = new javax.swing.JButton();
+        botonPorcentaje = new javax.swing.JButton();
+        botonPunto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -193,6 +197,46 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         });
         getContentPane().add(botonMultiplicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 64, 64));
 
+        botonElevadoCuad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        botonElevadoCuad.setText("x²");
+        botonElevadoCuad.setToolTipText("");
+        botonElevadoCuad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonElevadoCuadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonElevadoCuad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 64, 64));
+
+        botonRaizCuad.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botonRaizCuad.setText("√");
+        botonRaizCuad.setToolTipText("");
+        botonRaizCuad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRaizCuadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonRaizCuad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 64, 64));
+
+        botonPorcentaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        botonPorcentaje.setText("%");
+        botonPorcentaje.setToolTipText("");
+        botonPorcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPorcentajeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 64, 64));
+
+        botonPunto.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botonPunto.setText(".");
+        botonPunto.setToolTipText("");
+        botonPunto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPuntoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonPunto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 64, 64));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -309,6 +353,15 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         if(operacion.equals("*")){
             operando1 = operando1 * operando2;
         }
+        if(operacion.equals("x²")){
+            operando1 = operando1 * operando1;
+        }
+        if(operacion.equals("√")){
+            operando1 = Math.sqrt(operando1);
+        }
+        if(operacion.equals("%")){
+            operando1 = operando1 / 100;
+        }
         pantalla.setText(String.valueOf(operando1));
     }//GEN-LAST:event_botonIgualActionPerformed
 
@@ -335,6 +388,40 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //reseteo la pantalla
         pantalla.setText("0");
     }//GEN-LAST:event_botonMultiplicacionActionPerformed
+
+    private void botonElevadoCuadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonElevadoCuadActionPerformed
+        operacion = "x²";
+        //Double.valueOf convierte un string en su equivalente numérico
+        operando1 = Double.valueOf(pantalla.getText());
+        //reseteo la pantalla
+        pantalla.setText("0");
+    }//GEN-LAST:event_botonElevadoCuadActionPerformed
+
+    private void botonRaizCuadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizCuadActionPerformed
+        operacion = "√";
+        //Double.valueOf convierte un string en su equivalente numérico
+        operando1 = Double.valueOf(pantalla.getText());
+        //reseteo la pantalla
+        pantalla.setText("0");
+    }//GEN-LAST:event_botonRaizCuadActionPerformed
+
+    private void botonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPorcentajeActionPerformed
+        operacion = "%";
+        //Double.valueOf convierte un string en su equivalente numérico
+        operando1 = Double.valueOf(pantalla.getText());
+        //reseteo la pantalla
+        pantalla.setText("0");
+    }//GEN-LAST:event_botonPorcentajeActionPerformed
+
+    private void botonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPuntoActionPerformed
+        //Double.valueOf convierte un string en su equivalente numérico
+        operando1 = Double.valueOf(pantalla.getText());
+        //hago un int para que al poner la coma no se ponga también la coma del 
+        //double que suele salir.
+        int operando3 = (int) operando1;
+        //reseteo la pantalla
+        pantalla.setText(operando3 + ".");
+    }//GEN-LAST:event_botonPuntoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,8 +470,12 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton boton08;
     private javax.swing.JButton boton09;
     private javax.swing.JButton botonDivision;
+    private javax.swing.JButton botonElevadoCuad;
     private javax.swing.JButton botonIgual;
     private javax.swing.JButton botonMultiplicacion;
+    private javax.swing.JButton botonPorcentaje;
+    private javax.swing.JButton botonPunto;
+    private javax.swing.JButton botonRaizCuad;
     private javax.swing.JButton botonResta;
     private javax.swing.JButton botonSuma;
     private javax.swing.JLabel pantalla;
