@@ -48,6 +48,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         botonPunto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pantalla.setBackground(new java.awt.Color(0, 0, 0));
@@ -158,6 +159,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         });
         getContentPane().add(botonSuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 64, 64));
 
+        botonIgual.setBackground(new java.awt.Color(229, 120, 65));
         botonIgual.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         botonIgual.setText("=");
         botonIgual.addActionListener(new java.awt.event.ActionListener() {
@@ -165,17 +167,17 @@ public class VentanaCalculadora extends javax.swing.JFrame {
                 botonIgualActionPerformed(evt);
             }
         });
-        getContentPane().add(botonIgual, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 140, 64));
+        getContentPane().add(botonIgual, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 154, 64));
 
         botonDivision.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        botonDivision.setText("÷");
+        botonDivision.setText("/");
         botonDivision.setToolTipText("");
         botonDivision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonDivisionActionPerformed(evt);
             }
         });
-        getContentPane().add(botonDivision, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 64, 64));
+        getContentPane().add(botonDivision, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 64, 64));
 
         botonResta.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         botonResta.setText("-");
@@ -195,7 +197,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
                 botonMultiplicacionActionPerformed(evt);
             }
         });
-        getContentPane().add(botonMultiplicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 64, 64));
+        getContentPane().add(botonMultiplicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 64, 64));
 
         botonElevadoCuad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         botonElevadoCuad.setText("x²");
@@ -235,7 +237,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
                 botonPuntoActionPerformed(evt);
             }
         });
-        getContentPane().add(botonPunto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 64, 64));
+        getContentPane().add(botonPunto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 64, 64));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -343,26 +345,22 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         double operando2 = Double.valueOf(pantalla.getText());
         if(operacion.equals("+")){
             operando1 = operando1 + operando2;
+            pantalla.setText(String.valueOf(operando1));
         }
         if(operacion.equals("-")){
             operando1 = operando1 - operando2;
+            pantalla.setText(String.valueOf(operando1));
         }
         if(operacion.equals("/")){
             operando1 = operando1 / operando2;
+            pantalla.setText(String.valueOf(operando1));
         }
         if(operacion.equals("*")){
             operando1 = operando1 * operando2;
+            pantalla.setText(String.valueOf(operando1));
         }
-        if(operacion.equals("x²")){
-            operando1 = operando1 * operando1;
-        }
-        if(operacion.equals("√")){
-            operando1 = Math.sqrt(operando1);
-        }
-        if(operacion.equals("%")){
-            operando1 = operando1 / 100;
-        }
-        pantalla.setText(String.valueOf(operando1));
+        //Aqui podríamos añadir multiplicación, división y porcentaje, pero
+        //queremos que lo calcule directamente sin darle al igual.
     }//GEN-LAST:event_botonIgualActionPerformed
 
     private void botonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDivisionActionPerformed
@@ -394,7 +392,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //Double.valueOf convierte un string en su equivalente numérico
         operando1 = Double.valueOf(pantalla.getText());
         //reseteo la pantalla
-        pantalla.setText("0");
+        pantalla.setText("" + operando1 * operando1);
     }//GEN-LAST:event_botonElevadoCuadActionPerformed
 
     private void botonRaizCuadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizCuadActionPerformed
@@ -402,7 +400,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //Double.valueOf convierte un string en su equivalente numérico
         operando1 = Double.valueOf(pantalla.getText());
         //reseteo la pantalla
-        pantalla.setText("0");
+        pantalla.setText("" + Math.sqrt(operando1));
     }//GEN-LAST:event_botonRaizCuadActionPerformed
 
     private void botonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPorcentajeActionPerformed
@@ -410,7 +408,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //Double.valueOf convierte un string en su equivalente numérico
         operando1 = Double.valueOf(pantalla.getText());
         //reseteo la pantalla
-        pantalla.setText("0");
+        pantalla.setText("" + operando1 / 100);
     }//GEN-LAST:event_botonPorcentajeActionPerformed
 
     private void botonPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPuntoActionPerformed
